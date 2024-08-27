@@ -49,7 +49,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
     ProductDetailsComponent,
     WishlistComponent,
     OrderPlacedComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,

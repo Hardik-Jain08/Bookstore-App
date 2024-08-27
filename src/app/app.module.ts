@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -25,7 +24,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { OrderPlacedComponent } from './pages/order-placed/order-placed.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { AppMaterialModule } from './app-material/app-material.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +37,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
     FeedbackComponent,
     BreadcrumbComponent,
     AccordianComponent,
-    CardComponent,
     HomeComponent,
     DashboardComponent,
     PlsLoginComponent,
@@ -49,12 +47,14 @@ import { AppMaterialModule } from './app-material/app-material.module';
     ProductDetailsComponent,
     WishlistComponent,
     OrderPlacedComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    BrowserAnimationsModule,
+    CardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

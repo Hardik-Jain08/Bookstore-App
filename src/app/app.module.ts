@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,12 +50,13 @@ import { AppMaterialModule } from './app-material/app-material.module';
     ProductDetailsComponent,
     WishlistComponent,
     OrderPlacedComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

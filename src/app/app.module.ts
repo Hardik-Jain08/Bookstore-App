@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -25,6 +24,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { OrderPlacedComponent } from './pages/order-placed/order-placed.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { AppMaterialModule } from './app-material/app-material.module';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -34,6 +34,9 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 
+=======
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+>>>>>>> 19ed7919398dc58dc1c53ad266884ae357d7da49
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,6 @@ import { MatCardModule } from '@angular/material/card';
     FeedbackComponent,
     BreadcrumbComponent,
     AccordianComponent,
-    CardComponent,
     HomeComponent,
     DashboardComponent,
     PlsLoginComponent,
@@ -57,12 +59,13 @@ import { MatCardModule } from '@angular/material/card';
     ProductDetailsComponent,
     WishlistComponent,
     OrderPlacedComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,
     MatCardModule,
     AppRoutingModule,
+<<<<<<< HEAD
     HttpClientModule,
     AppMaterialModule,
     MatRadioModule,
@@ -70,6 +73,15 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
+=======
+    AppMaterialModule,
+<<<<<<< HEAD
+    FormsModule,
+=======
+>>>>>>> feat/Card_PleaseLogin
+    BrowserAnimationsModule,
+    CardComponent,
+>>>>>>> 19ed7919398dc58dc1c53ad266884ae357d7da49
   ],
   providers: [],
   bootstrap: [AppComponent]

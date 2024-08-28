@@ -1,0 +1,54 @@
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+}
+.form{
+    width: 100%;
+}
+.label{
+    font-size: 12px;
+}
+.space{
+    display: flex;
+    flex-direction: column;
+}
+.box{
+    height: 34px;
+}
+.box:focus{
+    border: 2px solid #A03037; 
+    outline: none;
+}
+.space-button{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.signup-button {
+    height: 37px;
+    background-color:  #A03037;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    cursor: pointer;
+} 
+.signup-button:hover {
+    background-color: darkred;
+}
+.error-container{
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.error-messages {
+    display: flex;
+    flex-direction: column;
+}
+mat-error{
+    font-size: 12px;
+}
+
+
+
+

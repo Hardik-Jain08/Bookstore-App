@@ -1,0 +1,89 @@
+.Profile{
+    margin-top: 45px;
+    margin-left: 214px;
+    width: 40.663%;
+}
+.header-1{
+    display: flex;
+    margin-bottom: 30px;
+}
+.p-details{
+    font-size: 22px;
+    margin-right: 12px;
+}
+.edit{
+    font-size: small;
+    color: #A03037;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.space{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    color: #0A0102;;
+}
+.box-size {
+    height: 35px;
+}
+.header-2{
+    margin-top: 60px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+.a-details{
+    font-size: 22px;   
+}
+.button {
+    color: #A03037 !important;
+    border-color: #A03037 !important;
+    height: 29px;
+    width: 123px;
+    opacity: 1;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+.button:hover{
+    background-color: rgb(252, 240, 240);
+}
+.box-size-big {
+    height: 65px;
+}
+.city-town-state{
+    display: flex;
+}
+.city-town{
+    @extend .space;
+    width: 48%;
+}
+.state{
+    @extend .city-town;
+    margin-left: 4%;
+}
+.example-radio-button{
+    margin-right: 14%;
+}
+.mat-mdc-radio-button.mat-accent{
+    --mdc-radio-selected-icon-color:#A03037;
+    --mdc-radio-selected-focus-icon-color: #A03037;
+    --mdc-radio-selected-hover-icon-color: #A03037;
+    --mat-radio-checked-ripple-color: #A03037;
+}
+@media only screen and (max-width: 728px) {
+    .Profile{
+        margin-left: 100px;
+        width: 55.663%;
+    }
+}
+@media only screen and (max-width: 428px) {
+    .Profile{
+        margin-top: 45px;
+        margin-left: 70px;
+        width: 65.663%;
+    }
+}
+

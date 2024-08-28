@@ -104,6 +104,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "da7e1134-0b6a-4608-bd46-807f9efcb518"
+=======
+    "analytics": "0a485558-b618-42eb-b76b-d68eba9b7ff3"
+>>>>>>> feat/Card_PleaseLogin
   }
 }

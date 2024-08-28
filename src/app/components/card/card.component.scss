@@ -1,9 +1,13 @@
 .outerDiv{
     display: flex;
     flex-wrap: wrap;
+<<<<<<< HEAD
     justify-content: center;
     align-content: center;
     gap: 2.8rem;
+=======
+    justify-content: space-between;
+>>>>>>> feat/Card_PleaseLogin
     font-family: Lato, Regular;
    
 }
@@ -32,14 +36,22 @@
     align-items: center;
     background-color: #F5F5F5;
     height: 172px;
+<<<<<<< HEAD
     width: 100%;
     border-top-left-radius:3px;
     border-top-right-radius:3px;
+=======
+    width: 218px;
+>>>>>>> feat/Card_PleaseLogin
     margin-bottom: 15px;
   }
   ::ng-deep .mat-mdc-card-header {
     display: flex;
     padding: 0px !important;
+<<<<<<< HEAD
+=======
+    border-radius: 3px;
+>>>>>>> feat/Card_PleaseLogin
 }
 .crtprice{
     font-size: 14px;
@@ -64,9 +76,15 @@
     font-size: 16px;
     background-color: #388E3C;
     color: white;
+<<<<<<< HEAD
     padding: 1px 4px;
     border-radius: 2px;
     margin: 5px 5px 1px 0px;
+=======
+    padding: 0px 3px;
+    border-radius: 2px;
+    margin: 5px 5px 5px 0px;
+>>>>>>> feat/Card_PleaseLogin
 }
 .rating{
     margin: 7px 0px;
@@ -79,6 +97,7 @@
 }
 .price{
     margin: 5px 0px 10px 0px;
+    margin: 10px 0px;
 }
 mat-form-field{
     width: 50%;
@@ -100,7 +119,10 @@ select{
 .nItems{
     font-size: 12px;
     color: #9D9D9D;
+<<<<<<< HEAD
     padding-left: 6px;
+=======
+>>>>>>> feat/Card_PleaseLogin
 }
 .books{
     font-size: 20px;
@@ -150,6 +172,7 @@ select{
 }
 ::ng-deep.ngx-pagination .current {
     padding: .1875rem .625rem;
+<<<<<<< HEAD
     background: #8F2B2F !important;
     cursor: default;
 }
@@ -173,3 +196,8 @@ select{
 ::ng-deep .ngx-pagination a:hover{
     background: #ffffff !important;
 }
+=======
+    background: #8F2B2F;
+    cursor: default;
+}
+>>>>>>> feat/Card_PleaseLogin

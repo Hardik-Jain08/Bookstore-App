@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 
+=======
+>>>>>>> feat/Card_PleaseLogin
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -49,13 +52,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductDetailsComponent,
     WishlistComponent,
     OrderPlacedComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
+<<<<<<< HEAD
     FormsModule,
+=======
+>>>>>>> feat/Card_PleaseLogin
     BrowserAnimationsModule,
     CardComponent,
   ],

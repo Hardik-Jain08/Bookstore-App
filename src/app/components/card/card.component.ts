@@ -65,6 +65,8 @@ export class CardComponent {
   page:number = 1;
  
   //data coming from server will written here -------------------------------------------------
+  page:number = 1;
+  numbers: number[] = Array(50).fill(0).map((x, i) => i + 1);
   bookName: string="hello";
   imgUrl: string="https://miblart.com/wp-content/uploads/2020/01/crime-and-mystery-cover-scaled-1.jpeg"
   Writername: string= "by LD Goffigan";

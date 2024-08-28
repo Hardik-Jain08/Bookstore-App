@@ -8,6 +8,9 @@
         <select name="" id="" (change)="onFilterChange($event)">
             <option value="" disabled selected>Sort by relevence</option>
             <option value="Price">Price</option>
+        <select name="" id="">
+            <option value="" disabled selected>Sort by relevence</option>
+            <option value="price">Price</option>
             <option value="Name">Name</option>
             <option value="Rating">Rating</option>
         </select>
@@ -43,5 +46,33 @@
 <div class="pages">
   <pagination-controls (pageChange)="onPageChange($event)"
    previousLabel="" nextLabel="" class="custom-pagination"></pagination-controls>
+    <div *ngFor="let number of numbers |  paginate: { itemsPerPage: 12, currentPage: page }">
+ <mat-card class="example-card" appearance="outlined" >
+    <mat-card-header class="mat-card-header1">
+        <img src="{{imgUrl}}" height="135px" width="105px" alt="">
+    </mat-card-header>
+    <mat-card-content class="mat-card-content1">
+      <div class="bookname">{{bookName}}</div>
+      <div class="atrName">{{Writername}}</div>
+      <div class="rating" >
+        <span class="ratingNum">{{rating}} ★</span>
+        <span style="color: #878787; font-size: 12px;">({{ratedBy}})</span>
+      </div>
+      <div class="price">
+        <span class="crtprice">Rs.{{currentPrice}}</span>
+        <span class="cancelled">Rs {{2000}}</span>
+      </div>
+    </mat-card-content>
+    <div id="outerDivQuick">
+        <div class="quick">QUICK VIEW</div>
+    </div>
+    <div class="outOfStock">
+        <div class="outOfStockInDiv">OUT OF STOCK</div>
+    </div>
+  </mat-card> 
+</div>
+</div>
+<div class="pages">
+  <pagination-controls (pageChange)="onPageChange($event)" previousLabel="" nextLabel=""></pagination-controls>
 </div>
 </div>

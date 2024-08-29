@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -27,6 +25,13 @@ import { OrderPlacedComponent } from './pages/order-placed/order-placed.componen
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material/app-material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
     FeedbackComponent,
     BreadcrumbComponent,
     AccordianComponent,
-    CardComponent,
     HomeComponent,
     DashboardComponent,
     PlsLoginComponent,
@@ -55,10 +59,17 @@ import { AppMaterialModule } from './app-material/app-material.module';
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
     AppRoutingModule,
+    HttpClientModule,
     AppMaterialModule,
-    FormsModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
+    FormsModule,
+    CardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

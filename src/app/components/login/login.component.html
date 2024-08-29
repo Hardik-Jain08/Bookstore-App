@@ -1,1 +1,55 @@
-<p>login works!</p>
+<div class="container">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onsubmit()">
+        <div class="space">
+            <label for="email" class="label">Email Id</label>
+            <input type="email" class="box" formControlName="email">
+            <div class="error-container">
+                <mat-error *ngIf="(email?.dirty || email?.touched) && email?.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="(email?.dirty || email?.touched) && email?.hasError('email') && !email?.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="email?.hasError('incorrect')">
+                    User doesn't exist
+                </mat-error>
+            </div>
+        </div>
+        <div class="space">
+            <label for="password" class="label">Password</label>
+            <input type="password" class="box" formControlName="password">
+            <div class="error-container">
+                <div class="error-messages">
+                <mat-error *ngIf="(password?.dirty || password?.touched) && password?.hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="(password?.dirty || password?.touched) && password?.hasError('minlength') && !password?.hasError('required')">
+                    Minimum 8 characters
+                </mat-error>
+                <mat-error *ngIf="password?.hasError('incorrect')">
+                    Incorrect password
+                </mat-error>
+                <mat-error style="font-size: 6px;" *ngIf="(password?.value.length >=8) && (password?.dirty || password?.touched) && password?.hasError('invalidPassword')">
+                    Password must conatain one (alphabet, character and numerical)
+                </mat-error>
+            </div>
+                <span [ngClass]="{'f-pass-1':(password?.value.length >=8) && (password?.dirty || password?.touched) && password?.hasError('invalidPassword')}" class="f-pass">Forget Password?</span>
+            </div>
+        </div>
+        <div class="space-button">
+            <button class="login-button">Login</button>
+        </div>
+    </form>
+    <div class="buttons">
+        <div class="line-class">
+            <div class="line"></div>
+            <div class="or">OR</div>
+            <div class="line"></div>
+        </div>
+        <div class="line-class">
+            <button class="fb-button">Facebook</button>
+            <button class="google-button">Google</button>
+        </div>
+    </div>
+</div>
+

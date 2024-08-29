@@ -1,0 +1,46 @@
+.image1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text {
+    font-family: 'lato';
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 3%;
+
+}
+.classy {
+    font-family: 'Lato';
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.btn {
+    background-color: #3371B5;
+    // text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-right: 1%;
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    border: #3371B5;
+    border-radius: 3px;
+    font-family: lato, medium;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30%;
+    width: 20%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    // transition: background 0.3s ease;
+}
+tbody{
+    background-color:white;
+}
+td{
+    height: 15vh;
+    width:280px;
+}

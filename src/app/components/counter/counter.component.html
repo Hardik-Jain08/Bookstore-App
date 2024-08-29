@@ -1,1 +1,12 @@
-<p>counter works!</p>
+<div class="outerDivC">
+    <div  class="counter">
+        <div style="display: flex; justify-content: space-between; vertical-align: middle;">
+                <button (click)="decrement()" class="minus"><img src="../../../assets/minus.png" height="15x" width="15px" alt="" srcset=""></button> 
+                <div class="cValue">{{counterValue}}</div>
+                <button (click)="increment()" class="plus"><img src="../../../assets/plus.png" height="15x" width="15px"  alt="" srcset=""></button>
+        </div>
+        <div>
+            <button class="remove" (click)="remove()">Remove</button>
+        </div>
+    </div>
+</div>

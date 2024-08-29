@@ -1,1 +1,62 @@
-<p>signup works!</p>
+<div class="container">
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="onsubmit()">
+        <div class="space">
+            <label for="name" class="label">Full Name</label>
+            <input type="text" class="box" formControlName="fullName">
+            <div class="error-container">
+                <mat-error *ngIf="(fullName?.dirty || fullName?.touched) && fullName?.hasError('required')">
+                    Your name is <strong>required</strong>
+                </mat-error>
+                <mat-error
+                    *ngIf="(fullName?.dirty || fullName?.touched) && fullName?.hasError('pattern') && !fullName?.hasError('required')">
+                    Please provide a valid name
+                </mat-error>
+            </div>
+        </div>
+        <div class="space">
+            <label for="email" class="label">Email Id</label>
+            <input type="email" class="box" formControlName="email">
+            <div class="error-container">
+                <mat-error *ngIf="(email?.dirty || email?.touched) && email?.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+                <mat-error
+                    *ngIf="(email?.dirty || email?.touched) && email?.hasError('email') && !email?.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+            </div>
+        </div>
+        <div class="space">
+            <label for="password" class="label">Password</label>
+            <input type="password" class="box" formControlName="password">
+            <div class="error-container">
+                <mat-error *ngIf="(password?.dirty || password?.touched) && password?.hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+                <mat-error
+                    *ngIf="(password?.dirty || password?.touched) && password?.hasError('minlength') && !password?.hasError('required')">
+                    Minimum 8 characters
+                </mat-error>
+                <mat-error style="font-size: 8px;" *ngIf="(password?.value.length >=8) && (password?.dirty || password?.touched) && password?.hasError('invalidPassword')">
+                    Password must conatain one (alphabet, character and numerical)
+                </mat-error>
+            </div>
+        </div>
+        <div class="space">
+            <label for="number" class="label">Mobile Number</label>
+            <input type="number" class="box" formControlName="phone">
+            <div class="error-container">
+                <mat-error *ngIf="(phone?.dirty || phone?.touched) && phone?.hasError('required')">
+                    Mobile number is <strong>required</strong>
+                </mat-error>
+                <mat-error
+                    *ngIf="(phone?.dirty || phone?.touched) && (phone?.hasError('pattern') || phone?.hasError('invalidPhoneNumber')) && !phone?.hasError('required')">
+                    Provide valid Indian 10 digit number
+                </mat-error>
+            </div>
+        </div>
+        <div class="space-button">
+            <button class="signup-button">Signup</button>
+        </div>
+    </form>
+</div>

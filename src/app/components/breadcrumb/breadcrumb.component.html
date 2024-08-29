@@ -1,1 +1,8 @@
-<p>breadcrumb works!</p>
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs; let last = last">
+        <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+        <ng-container *ngIf="!last"> / </ng-container>
+      </li>
+    </ol>
+</div>

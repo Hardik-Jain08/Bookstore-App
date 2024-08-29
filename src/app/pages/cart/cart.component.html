@@ -1,1 +1,121 @@
-<p>cart works!</p>
+<div class="mycart-container">
+    <div class="mycart">
+        <div style="display: flex; justify-content: space-between;">
+            <div class="mycart1"> 
+                <h3 style="font-weight: 500; font-size: 18px;">My cart (1)</h3>
+            </div>
+            <div class="location">
+                <button class="dropbtn" onclick="myFunction()">Use current location</button>
+            </div>
+        </div>
+        <div style="display: flex; margin-left: 2%; height: 47%;">
+            <div class="image">
+                <img src="../../../assets/Image 11.png" alt="" style="height: 100%;">
+            </div>
+            <div class="details">
+                <h4 style="font-weight: 500;">Don't Make Me Think</h4>
+                <p style="font-size: 14px; color: #9D9D9D;">by Steve Krug</p>
+                <p style="font-size: 14px; font-weight: 500;">Rs. 1500 <span style="color: #9D9D9D; font-size: 10px; margin-left: 2px;"><s>Rs.2000</s></span></p>
+                <div style="display: flex; justify-content: space-between; width: 50%;">
+                    <div style="display: flex; gap: 10px; ">
+                        <button class="btn">-</button>
+                        <div class = "item"><span>1</span></div>
+                        <button class="btn">+</button>
+                    </div>
+                    <div>
+                        <div style="margin-left: 24px;font-size: 13px; font-weight: 500;">Remove</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: end; margin-right: 30px; margin-bottom: 2px;" *ngIf="!isFormContainerVisible">
+            <button class = "btn" style="background-color: #3371B5; color: white; width: 151px; height: 35px; border-radius: 2px; cursor: pointer;" (click)="formFunction()">PLACE ORDER</button>
+        </div>
+    </div>
+</div>
+<div class="address-details" *ngIf="!isFormContainerVisible">
+    <h3 style="color: #9D9D9D; margin-bottom: 0%;">Address Details</h3>
+</div>
+<div>
+    <div class="form-container" *ngIf="isFormContainerVisible">
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <h2>Customer Details</h2>
+            </div>
+            <div class="buttons">
+                <button class="add-address">Add New Address</button>
+            </div>
+        </div>
+        <div class="content">
+
+            <div class="form-group">
+                <div>
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name">
+                </div>
+                <div>
+                    <label for="mobile-number">Mobile Number</label>
+                    <input type="text" id="mobile-number" name="mobile-number">
+                </div>
+            </div>
+            <div class="add-address">
+                <div>
+                    <label for="address">Address</label>
+                </div>
+                <div style="height: 76px;">
+                    <input type="text" id="address" name="address">
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label for="city">City/Town</label>
+                    <input type="text" id="city" name="city">
+                </div>
+                <div style="width: 50%;">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state">
+                </div>
+            </div>
+            <div class="type">
+                <div style="margin-bottom: 2%;">
+                    <label>Type</label>
+                </div>
+                <div class="type-options">
+                    <label><input type="radio" name="type" value="home"> Home</label>
+                    <label><input type="radio" name="type" value="work"> Work</label>
+                    <label><input type="radio" name="type" value="other"> Other</label>
+                </div>
+            </div>
+        </div>
+        <div class="buttons" *ngIf="!isOrderSummaryVisible">
+            <button class = "continue" (click)="orderFunction()">CONTINUE</button>
+        </div>
+    </div>
+</div>
+<div class="order-details" *ngIf="!isOrderSummaryVisible">
+    <h3 style="color: #9D9D9D; margin-bottom: 0%;">Order summery</h3>
+</div>
+<div class="order-summary" *ngIf="isOrderSummaryVisible">
+    <div class="mycart">
+        <div style="display: flex; justify-content: space-between;">
+            <div class="mycart1">
+                <h3 style="font-weight: 500; font-size: 18px;">Order summery</h3>
+            </div>
+        </div>
+        <div style="display: flex; margin-left: 2%; height: 47%;">
+            <div class="image">
+                <img src="../../../assets/Image 11.png" alt="" style="height: 100%;">
+            </div>
+            <div class="details">
+                <h4 style="font-weight: 500;">Don't Make Me Think</h4>
+                <p style="font-size: 14px; color: #9D9D9D;">by Steve Krug</p>
+                <p style="font-size: 14px; font-weight: 500;">Rs. 1500 <span
+                        style="color: #9D9D9D; font-size: 10px; margin-left: 2px;"><s>Rs.2000</s></span></p>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: end; margin-right: 30px; margin-bottom: 2px;">
+            <button class="btn"
+                style="background-color: #3371B5; color: white; width: 151px; height: 35px; border-radius: 2px; cursor: pointer;">CHECKOUT</button>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,73 @@
-<p>product-details works!</p>
+<div class="book-details">
+    <div class="small-image-left">
+        <div class="small-image-div">
+            <img src="../../../assets/Image 11.png">
+        </div>
+        <div class="small-image-div">
+            <img src="../../../assets/Image 11.png">
+        </div>
+    </div>
+    <div class="large-image-div">
+        <div class="large-image">
+            <img width="281px" height="367px" src="../../../assets/Image 11@2x.png">
+        </div>
+        <div class="buttons">
+            <button mat-raised-button>ADD TO BAG</button>
+            <button mat-raised-button><mat-icon>favorite</mat-icon>WISHLIST</button>
+        </div>
+    </div>
+    <div class="right-content">
+        <div class="right-content-top">
+            <p style="font: normal normal normal 28px/37px Roboto;">Don't Make Me Think</p>
+            <p style="font: normal normal normal 18px/24px Roboto; color: #878787;">by Steve Krug</p>
+            <div class="rating-discount">
+                <div class="rating">
+                    <p>4.5</p>
+                    <p><mat-icon style="width: 20px;height: 20px;">star</mat-icon></p>
+                </div>
+                <p style="margin-top: 2%; margin-left: 2%; color: #878787;">(20)</p>
+            </div>
+            <div class="price">
+                <p>Rs.1500</p>
+                <p>Rs.2000</p>
+            </div>
+        </div>
+        <div class="right-content-center">
+            <p style="color: #878787;font: normal normal normal 15px/20px Roboto;">.Book Detail</p>
+            <p style="font: normal normal normal 12px/16px Roboto;color: #373434;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="right-content-bottom">
+            <p style="font: normal normal normal 18px/24px Roboto">Customer Feedback</p>
+            <div class="feedback">
+                <p class="overall_rating">Overall rating</p>
+                <div class="stars">
+                    <mat-icon *ngFor="let i of [1,2,3,4,5]">star_outline</mat-icon>
+                </div>
+                <textarea placeholder="Write your review"></textarea>
+                <button mat-raised-button>Submit</button>
+            </div>
+            <div class="reviews">
+                <div class="review">
+                        <div class="profile_name">
+                            <mat-icon>account_circle</mat-icon>
+                            <p>Shweta Bodkar</p>
+                        </div>
+                        <div class="stars">
+                            <mat-icon *ngFor="let i of [1,2,3,4,5]">star_outline</mat-icon>
+                        </div>
+                        <p class="desc">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct</p>
+                </div>
+                <div class="review">
+                    <div class="profile_name">
+                        <mat-icon>account_circle</mat-icon>
+                        <p>Shweta Bodkar</p>
+                    </div>
+                    <div class="stars">
+                        <mat-icon *ngFor="let i of [1,2,3,4,5]">star_outline</mat-icon>
+                    </div>
+                    <p class="desc">Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

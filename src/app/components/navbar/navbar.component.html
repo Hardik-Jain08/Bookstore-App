@@ -11,7 +11,7 @@
     <img class="logo" src="../../../assets/logo.svg" alt="BookStore Logo" />
     <span style="font: normal 20px/26px Roboto; color: #ffffff">BookStore</span>
   </div>
-  <div class="search-container" *ngIf="ishome">
+  <div class="search-container" *ngIf="showsearchbar">
     <span class="material-symbols-outlined"> search </span>
     <input type="text" class="search-input" placeholder="Search..." />
   </div>
@@ -21,7 +21,7 @@
       <p>Profile</p>
     </div>
     <div class="cart" [routerLink]="['/cart']">
-      <div [matBadge]="cartCnt" style="width: 50%; display: flex; justify-content: center;">
+      <div [matBadge]="cartCnt" matBadgeSize="small" style="width: 50%; display: flex; justify-content: center;">
         <img src="../../../assets/supermarket.svg" alt="cartIcon" />
       </div>
       <p>Cart</p>

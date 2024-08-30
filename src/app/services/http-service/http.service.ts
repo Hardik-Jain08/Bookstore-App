@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  postApiCall(endpoint:string, data: any, options?:any){
+  postApiCall(endpoint:string, data?: any, options?:any){
     return this.http.post(environment.BASE_URL + endpoint, data, options);
   }
 

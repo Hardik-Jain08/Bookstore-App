@@ -9,15 +9,14 @@ export class WishlistService {
 
   constructor(private httpService: HttpService) { }
 
-  addWishList(product_id: string, token: string) {
+  addWishList(product_id: string, token: any) {
     const headers = new HttpHeaders({
-      'accept': 'application/json',
       'Content-Type':'application/json',
-      'x-access-token': token
-    })
-    return this.httpService.postApiCall(`add_wish-list/${product_id}`, {headers});
+      'x-access-token': token,
+    });
+    return this.httpService.postApiCall(`add_wish_list/${product_id}`, {}, {headers});
   }
-  
+ 
   removeWishList(cartItemId:string, token:string) {
     const headers = new HttpHeaders({
       'accept': 'application/json',

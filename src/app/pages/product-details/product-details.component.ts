@@ -62,7 +62,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToWishlist() {
-    this.wishlistService.addWishList(this.bookId, this.token!).subscribe({
+    this.wishlistService.addWishList(this.bookId, this.token).subscribe({
       next: (res: any) => {
         console.log(res);
         if (res.message === 'Product item is already in wish list') {
@@ -71,7 +71,16 @@ export class ProductDetailsComponent implements OnInit {
           this.router.navigate(['/wishlist']);
         }
       },
-      error: (err) => console.log(err),
+      error: (err) => {
+        console.error('API Error:', err);
+        if (err.status === 400) {
+            console.error('Bad Request:', err.error);
+        } else if (err.status === 404) {
+            console.error('Not Found:', err.error);
+        } else {
+            console.error('Unexpected Error:', err);
+        }
+      }
     });
   }
 

@@ -28,10 +28,18 @@ import { AppMaterialModule } from './app-material/app-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { HttpService } from './services/http-service/http.service';
+import { CartService } from './services/cart-service/cart.service';
+import { CustomerDetailService } from './services/customerDetail-service/customer-detail.service';
+import { FeedbackService } from './services/feedback-service/feedback.service';
+import { ProductService } from './services/product-service/product.service';
+import { UserService } from './services/user-service/user.service';
+import { WishlistService } from './services/wishlist-service/wishlist.service';
+import { OrderService } from './services/order-service/order.service';
+import { ImgService } from './services/img-service/img.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +54,6 @@ import { MatCardModule } from '@angular/material/card';
     BreadcrumbComponent,
     AccordianComponent,
     HomeComponent,
-    DashboardComponent,
     PlsLoginComponent,
     ForgotPasswordComponent,
     ProfileComponent,
@@ -59,6 +66,7 @@ import { MatCardModule } from '@angular/material/card';
   ],
   imports: [
     BrowserModule,
+    DashboardComponent,
     MatCardModule,
     AppRoutingModule,
     HttpClientModule,
@@ -71,7 +79,7 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     CardComponent,
   ],
-  providers: [],
+  providers: [HttpService, CartService, CustomerDetailService, FeedbackService, ProductService, UserService, WishlistService, OrderService, ImgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@
     align-items: center;
     gap: 20px;
     justify-content: space-around;
+    z-index: 999;
   }
   
   .search-container {
@@ -63,3 +64,200 @@
     gap: 4px;
   }
   
+  
+.dialog-authenticated {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  top: 64px;
+  left: 80%;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  * {
+      margin-left: 8%;
+  }
+
+  :first-child {
+      font: normal normal medium 12px/16px Roboto;
+      letter-spacing: 0px;
+      color: #0A0102;
+      font-weight: 800;
+      margin-top: 3%;
+      margin-left: 10%;
+  }
+
+  .profile,
+  .my_orders,
+  .wishlist {
+      font: normal normal normal 12px/16px Roboto;
+      display: flex;
+      color: #878787;
+      align-items: center;
+      cursor: pointer;
+
+      mat-icon {
+          color: #878787;
+          margin-top: 0;
+          margin-bottom: 4.5%;
+      }
+
+      height: auto;
+  }
+
+  button {
+      border: 1px solid #A03037;
+      border-radius: 2px;
+      width: 123px;
+      height: 33px;
+      margin-top: 0;
+      margin-left: 15%;
+      font: normal normal normal 12px/16px Roboto;
+      letter-spacing: 0px;
+      color: #A03037;
+  }
+}
+
+.dialog-not-authenticated {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  top: 64px;
+  left: 65%;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  z-index: 10;
+
+  .my_orders {
+      padding-top: 2%;
+  }
+
+  .my_orders,
+  .wishlist {
+      font: normal normal normal 12px/16px Roboto;
+      display: flex;
+      color: #878787;
+      align-items: center;
+      cursor: pointer;
+      margin-left: 7%;
+      margin-top: 0.2%;
+
+      mat-icon {
+          font-size: 20px;
+          color: #878787;
+          margin-top: 0;
+          margin-bottom: 4.5%;
+          margin-right: 1%;
+      }
+  }
+
+  .welcome-login-signup {
+      margin-left: 8%;
+      margin-right: 5%;
+      padding-bottom: 5%;
+      margin-bottom: 3%;
+      margin-top: 3%;
+      border-bottom: 1px solid gray;
+
+      :first-child {
+          font: normal normal medium 12px/16px Roboto;
+          letter-spacing: 0px;
+          color: #0A0102;
+          font-weight: 800;
+      }
+
+      :nth-child(2) {
+          font: normal normal normal 12px/16px Roboto;
+          letter-spacing: 0px;
+          color: #878787;
+      }
+
+      button {
+          border: 1px solid #A03037;
+          border-radius: 2px;
+          width: 123px;
+          height: 33px;
+          margin-top: 0;
+          margin-left: 0;
+          font: normal normal normal 12px/16px Roboto;
+          letter-spacing: 0px;
+          color: #A03037;
+      }
+  }
+
+}
+@media screen and (max-width:700px) {
+
+  .dialog-not-authenticated {
+      width: 40%;
+      height: auto;
+      position: absolute;
+      top: 64px;
+      left: 55%;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 6px #00000029;
+      z-index: 10;
+  
+      .my_orders {
+          padding-top: 2%;
+      }
+  
+      .my_orders,
+      .wishlist {
+          font: normal normal normal 12px/16px Roboto;
+          display: flex;
+          color: #878787;
+          align-items: center;
+          cursor: pointer;
+          margin-left: 7%;
+          margin-top: 0.2%;
+  
+          mat-icon {
+              font-size: 20px;
+              color: #878787;
+              margin-top: 0;
+              margin-bottom: 4.5%;
+              margin-right: 1%;
+          }
+      }
+  
+      .welcome-login-signup {
+          margin-left: 8%;
+          margin-right: 5%;
+          padding-bottom: 5%;
+          margin-bottom: 3%;
+          margin-top: 3%;
+          border-bottom: 1px solid gray;
+  
+          :first-child {
+              font: normal normal medium 12px/16px Roboto;
+              letter-spacing: 0px;
+              color: #0A0102;
+              font-weight: 800;
+          }
+  
+          :nth-child(2) {
+              font: normal normal normal 12px/16px Roboto;
+              letter-spacing: 0px;
+              color: #878787;
+          }
+  
+          button {
+              border: 1px solid #A03037;
+              border-radius: 2px;
+              width: 90%;
+              height: 33px;
+              margin-top: 0;
+              margin-left: 0;
+              font: normal normal normal 12px/16px Roboto;
+              letter-spacing: 0px;
+              color: #A03037;
+          }
+      }
+  
+  }
+
+}

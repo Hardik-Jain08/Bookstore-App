@@ -1,46 +1,20 @@
-<!-- navBar -->
-<!-- Breadcrum -->
-<div style="width: 100%; display: flex; justify-content: center; padding-top: 2%;">
-    <table>
-        <thead>
-            <th><b>My Wishlist (02)</b></th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="book-container">
-                        <img src="../../../assets/Image 11.png" alt="Don't make me Think" class="book-img">
-                        <div class="book-info">
-                            <h3 class="book-name">Don't make me think</h3>
-                            <p class="author">by Steve Krung</p>
-                            <div class="price-align">
-                                <p class="price">Rs.1500</p>
-                            <p class="discount">Rs.2000</p>
-                        </div>
-                    </div>
-                    <div class="btn">
-                        <img src="../../../assets/delete-black-18dp.svg">
-                    </div>
+<div class="wishlist">
+    <div class="my-wishlist">
+        <p>My Wishlist</p>
+        <p class="p02">({{wislistLength}})</p>
+    </div>
+    <div class="main-content">
+        <div class="wishlist-card" *ngFor="let i of wishlistItems">
+            <img src="../../../assets/Image 11@2x.png">
+            <div class="card-content">
+                <p class="card-title">{{i.product_id.bookName}}</p>
+                <p class="card-author">{{i.product_id.author}}</p>
+                <div class="price">
+                    <p class="card-price">Rs. {{i.product_id.price-i.product_id.discountPrice}}</p>
+                    <p class="card-discount"><s>Rs. {{i.product_id.discountPrice}}</s></p>
                 </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="book-container">
-                    <img src="../../../assets/Image 11.png" alt="Don't make me Think" class="book-img">
-                    <div class="book-info">
-                        <h3 class="book-name">Don't make me think</h3>
-                        <p class="author">by Steve Krung</p>
-                        <div class="price-align">
-                        <p class="price">Rs.1500</p><p class="discount">Rs.2000</p>
-                    </div>
-                    </div>
-                    <div class="btn">
-                        <img src="../../../assets/delete-black-18dp.svg">
-                    </div>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+            </div>
+            <mat-icon (click)="deleteFromWishlist(i.product_id._id)" >delete_outline</mat-icon>
+        </div>
+    </div>
 </div>

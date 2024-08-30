@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, FormBuilder, FormGroup, ValidatorFn, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user-service/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/services/user-service/user.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8), this.passwordValidator()]]
@@ -42,6 +43,7 @@ export class LoginComponent {
         (res: any) => {
           if (res.result) {
             localStorage.setItem('accessToken', res.result.accessToken);
+            this.router.navigate(["/home"]);
           }
            else if (res.message === 'please enter valid password') {
             this.setCustomError('password', 'incorrect', true);

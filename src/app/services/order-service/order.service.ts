@@ -10,7 +10,11 @@ export class OrderService {
   constructor(private httpService: HttpService) { }
 
   addOrder(data: any, token: string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
     return this.httpService.postApiCall('add/order', data, {headers});
   }
 }

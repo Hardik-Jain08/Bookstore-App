@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-signup',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-signup.component.scss']
 })
 export class LoginSignupComponent {
-  check: boolean = true;
+  constructor(private router: Router){}
+  check: boolean = (this.router.url === '/login') ? true : false;
   toggle1(){
     this.check=true;
   }

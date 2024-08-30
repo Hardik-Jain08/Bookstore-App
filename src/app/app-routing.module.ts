@@ -9,6 +9,10 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { OrderPlacedComponent } from './pages/order-placed/order-placed.component';
+import { CardComponent } from './components/card/card.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { PlsLoginComponent } from './pages/pls-login/pls-login.component';
 
 const routes: Routes = [
   {
@@ -21,23 +25,29 @@ const routes: Routes = [
       },
       {
         path: 'home',
+        component: HomeComponent,
         children: [
           {
             path: '',
-            component: DashboardComponent
+            component: DashboardComponent,
           },
-          {
-            path: 'product/:id',
-            component: ProductDetailsComponent,
-            canActivate: [authGuard]
-          }
         ]
-      }
+      },
+      {
+        path: 'product-detail',
+        component: ProductDetailsComponent,
+        canActivate: [authGuard]
+      },
     ]
   },
   {
     path: 'cart',
     component: CartComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'order-placed',
+    component: OrderPlacedComponent,
     canActivate: [authGuard]
   },
   {
@@ -48,6 +58,14 @@ const routes: Routes = [
     path: 'signup',
     component: LoginSignupComponent,
   },
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
+  },
+  {
+    path: 'pleaselogin',
+    component: PlsLoginComponent
+  }
 ];
 
 @NgModule({

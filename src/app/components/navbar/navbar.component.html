@@ -1,16 +1,17 @@
-<div class="navbar">
-  <div
+<div class="navbar" >
+  <div [routerLink]="['']"
     style="
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 10px;
+      cursor: pointer;
     "
   >
     <img class="logo" src="../../../assets/logo.svg" alt="BookStore Logo" />
     <span style="font: normal 20px/26px Roboto; color: #ffffff">BookStore</span>
   </div>
-  <div class="search-container">
+  <div class="search-container" *ngIf="ishome">
     <span class="material-symbols-outlined"> search </span>
     <input type="text" class="search-input" placeholder="Search..." />
   </div>
@@ -19,11 +20,45 @@
       <span class="material-symbols-outlined">person </span>
       <p>Profile</p>
     </div>
-    <div class="cart">
-      <div matBadge="7" style="width: 50%; display: flex; justify-content: center;">
+    <div class="cart" [routerLink]="['/cart']">
+      <div [matBadge]="cartCnt" style="width: 50%; display: flex; justify-content: center;">
         <img src="../../../assets/supermarket.svg" alt="cartIcon" />
       </div>
       <p>Cart</p>
     </div>
+  </div>
+</div>
+<div *ngIf="showdialog" class="dialog-box">
+  <div style=" width: 81px; height: 10px; border-radius: 3px; background: #FFFFFF 0% 0% no-repeat padding-box; top: 56px;left: 80%;"></div>
+  <div *ngIf="isLoggedIn" class="dialog-authenticated">
+      <p>Hello Poonam,</p>
+      <div class="profile" (click)="openProfile()">
+          <mat-icon>person_outline</mat-icon>
+          <p>Profile</p>
+      </div>
+      <div class="my_orders" (click)="openorders()" >
+          <mat-icon>markunread_mailbox_outline</mat-icon>
+          <p>My Orders</p>
+      </div>
+      <div class="wishlist" (click)="openwishlist()">
+          <mat-icon>favorite_outline</mat-icon>
+          <p>My Wishlist</p>
+      </div>
+      <button mat-button (click)="logout()">Logout</button>
+  </div>
+  <div *ngIf="!isLoggedIn"  class="dialog-not-authenticated">
+      <div class="welcome-login-signup">
+          <p>Welcome</p>
+          <p>To access account and manage orders</p>
+          <button mat-button [routerLink]="['/login']">LOGIN/SIGNUP</button>
+      </div>
+      <div class="my_orders" [routerLink]="['/pleaselogin']" >
+          <mat-icon>markunread_mailbox_outline</mat-icon>
+          <p>My Orders</p>
+      </div>
+      <div class="wishlist" [routerLink]="['/pleaselogin']">
+          <mat-icon>favorite_outline</mat-icon>
+          <p>My Wishlist</p>
+      </div>
   </div>
 </div>

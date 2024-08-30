@@ -1,88 +1,86 @@
-table{
-    background-color: #E4E4E4;
-    width: 75%;
-}
-th {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 25px;
-    text-align: left;
-}
-.wishlist{
-    width: 100%;
-    border: 1px solid #bab5b5;
-    background: #F5F5F5 0% 0% no-repeat padding-box;
-    p{
-        padding-left: 5%;
-        font-size: 18px;
+.wishlist {
+    border: 1px solid #E4E4E4;
+    width: 900px;
+    margin-top: 3%;
+    margin-left: auto;
+    height: auto;
+    margin-right: auto;
+
+    .my-wishlist {
+        display: flex;
+        background-color: #F5F5F5;
+        border: 1px solid #E4E4E4;
         color: #0A0102;
-        font-family: Roboto;
-        font-weight: 500;
+        height: 55px;
+        font: bold normal medium 18px/24px Roboto;
+        font-weight: bold;
+        font-size: medium;
+        align-items: center;
+
+        :first-child {
+            margin-left: 5%;
+        }
+
+        .p02 {
+            margin-left: 1%;
+        }
     }
 }
-.book-container{
+
+.main-content {
     display: flex;
-    gap: 20px; 
-    width: 100%;
-    background-color: #FCFCFC;
-    justify-content: space-around;
-    align-items: center;
-}
-.book-info{
-flex: 1;
-font-family: Roboto,Regular;
-p,h3{
-    margin: 10px 5px;
-}
-}
-.book-img{
-width: 80px;
-height: 90px;
-padding-top: 10px;
-margin-right: 20px;
-margin-left: 20px;
-
-}
-.price-align{
-display: flex;
-// justify-content: flex-start;
-padding-bottom: 1%;
-align-items: center;
+    flex-direction: column;
 }
 
-.discount{
-text-decoration: line-through;
-color: #9D9D9D;
-font-size: 12px;
-display: block;
-padding-left: 5%;
-padding-top: 0.1%;
+.wishlist-card {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+
+    mat-icon {
+        cursor: pointer;
+        margin-top: 5%;
+        margin-left: 5%;
+        color: #9D9D9D;
+    }
+
+    img {
+        width: 65px;
+        height: 85px;
+        margin: 4%;
+    }
+
+    border-bottom: 2px solid #E4E4E4;
+
+    .card-content {
+        margin-top: 4%;
+        width: 70%;
+        height: 100%;
+        .card-title {
+            font: normal normal normal 18px/24px Roboto;
+            color: #0A0102;
+        }
+
+        .card-author {
+            font: normal normal normal 12px/16px Roboto;
+            color: #9D9D9D;
+        }
+
+        .card-price {
+            font: normal normal bold 15px/20px Roboto;
+            color: #0A0102;
+        }
+
+        .card-discount {
+            font: normal normal normal 12px/16px Roboto;
+            color: #9D9D9D;
+            margin-left: 5%;
+            margin-top: 0.3%;
+        }
+
+    }
 }
-.author{
-color: #9D9D9D;
-font-size: 12px;
-// margin-bottom: 0.1%;
+
+.price {
+    display: flex;
 }
-.book-name{
-color: #0A0102;
-font-size: 18px;
-}
-.price{
-color: #0A0102;
-font-size: 15px;
-}
-// .circle{
-// width: 5px;
-// height: 5px;
-// background-color: green;
-// border-radius: 100%;
-// }
-.btn{
-padding-top: 40px;
-margin-right: 30px;
-}
-// .order{
-// color: #0A0102;
-// font-size: 15px;
-// font-family: Roboto,Regular;
-// }

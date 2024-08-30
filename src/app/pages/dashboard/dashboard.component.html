@@ -1,1 +1,25 @@
-<p>dashboard works!</p>
+<div style="margin: 30px 100px">
+    <div class="head">
+      <div>
+        <span class="books">Books</span>
+        <span class="nItems">({{bookcount}} items)</span>
+      </div>
+      <div class="optiondiv">
+        <select name="" id="" (change)="onFilterChange($event)">
+          <option value="" disabled selected>Sort by relevance</option>
+          <option value="Price">Price</option>
+          <option value="Name">Name</option>
+          <option value="Rating">Rating</option>
+        </select>
+      </div>
+    </div>
+    <div class="outerDiv">
+      <div *ngFor="let product of (products$ | async) || [] | paginate: { itemsPerPage: 12, currentPage: page }">
+        <app-card [bookdata]="product"></app-card>
+      </div>
+    </div>
+    <div class="pages">
+      <pagination-controls (pageChange)="onPageChange($event)" previousLabel="Previous" nextLabel="Next" class="custom-pagination"></pagination-controls>
+    </div>
+  </div>
+  

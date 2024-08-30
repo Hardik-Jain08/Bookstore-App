@@ -9,23 +9,39 @@ export class CartService {
 
   constructor(private httpService: HttpService) { }
 
-  addCartItem(product_id: string, data: any, token: string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.httpService.postApiCall(`add_cart_item/${product_id}`, data, {headers});
+  addCartItem(product_id: string, token: string) {
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
+    return this.httpService.postApiCall(`add_cart_item/${product_id}`, {headers});
   }
 
   updateCartItemQuantity(cartItemId: string, data: any, token:string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
     return this.httpService.putApiCall(`cart_item_quantity/${cartItemId}`, data, {headers});
   }
 
   removeCartItem(cartItemId: string, token:string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
     return this.httpService.deleteApiCall(`remove_cart_item/${cartItemId}`, {headers});
   }
 
   getCartItems(token: string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
     return this.httpService.getApiCall('get_cart_items', {headers});
   }
 

@@ -9,18 +9,30 @@ export class WishlistService {
 
   constructor(private httpService: HttpService) { }
 
-  addWishList(product_id: string, data:any, token: string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.httpService.postApiCall(`add_wish-list/${product_id}`, data, {headers});
+  addWishList(product_id: string, token: string) {
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
+    return this.httpService.postApiCall(`add_wish-list/${product_id}`, {headers});
   }
   
   removeWishList(cartItemId:string, token:string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
     return this.httpService.deleteApiCall(`remove_wishlist_item/${cartItemId}`, {headers});
   }
 
   getWishList(token:string) {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'Content-Type':'application/json',
+      'x-access-token': token
+    })
     return this.httpService.getApiCall('get_wishlist_items', {headers});
   }
 }

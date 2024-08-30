@@ -1,44 +1,61 @@
 <div class="mycart-container">
     <div class="mycart">
-        <div style="display: flex; justify-content: space-between;">
-            <div class="mycart1"> 
-                <h3 style="font-weight: 500; font-size: 18px;">My cart (1)</h3>
+        <div class="cart-length">
+            <div class="mycart1">
+                <h3 style="font-weight: 500; font-size: 18px;">My cart ({{cartItems.length}})</h3>
             </div>
             <div class="location">
-                <button class="dropbtn" onclick="myFunction()">Use current location</button>
+                <button class="btn-none dropdown-toggle custom-align dropbtn" type="button" data-toggle="dropdown"
+                    required>
+                    <div>
+                        <img src="../../../assets/map.svg" alt="">
+                    </div>
+                    <div class="use-location">
+                        {{location}}
+                    </div>
+                </button>
             </div>
         </div>
-        <div style="display: flex; margin-left: 2%; height: 47%;">
-            <div class="image">
-                <img src="../../../assets/Image 11.png" alt="" style="height: 100%;">
-            </div>
-            <div class="details">
-                <h4 style="font-weight: 500;">Don't Make Me Think</h4>
-                <p style="font-size: 14px; color: #9D9D9D;">by Steve Krug</p>
-                <p style="font-size: 14px; font-weight: 500;">Rs. 1500 <span style="color: #9D9D9D; font-size: 10px; margin-left: 2px;"><s>Rs.2000</s></span></p>
-                <div style="display: flex; justify-content: space-between; width: 50%;">
-                    <div style="display: flex; gap: 10px; ">
-                        <button class="btn">-</button>
-                        <div class = "item"><span>1</span></div>
-                        <button class="btn">+</button>
-                    </div>
-                    <div>
-                        <div style="margin-left: 24px;font-size: 13px; font-weight: 500;">Remove</div>
+        <div class="scroll">
+            <div class="book-data"
+                *ngFor="let book of cartItems; let ind = index">
+                <div class="image">
+                    <img src="../../../assets/Image 11.png" alt="" style="height: 100%;">
+                </div>
+                <div class="details">
+                    <h4 style="font-weight: 500;">{{book.product_id.bookName}}</h4>
+                    <p style="font-size: 14px; color: #9D9D9D;">by {{book.product_id.author}}</p>
+                    <p style="font-size: 14px; font-weight: 500;">Rs. {{book.product_id.discountPrice}} <span
+                            style="color: #9D9D9D; font-size: 10px; margin-left: 2px;"><s>Rs.
+                                {{book.product_id.price}}</s></span></p>
+                    <div class="quantity">
+                        <div class="edit-quantity">
+                            <button class="btn" (click)="decValue(ind)" [disabled]="book.quantityToBuy === 1">–</button>
+                            <input type="number" class="item" [(ngModel)]="book.quantityToBuy">
+                            <button class="btn" (click)="incValue(ind)"><img src="../../../assets/plus.svg"
+                                    alt=""></button>
+                        </div>
+                        <div class="remove">
+                            <div style="margin-left: 24px; font-size: 13px; font-weight: 500; cursor: pointer;" (click)="removeItem(ind)">Remove
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: end; margin-right: 30px; margin-bottom: 2px;" *ngIf="!isFormContainerVisible">
-            <button class = "btn" style="background-color: #3371B5; color: white; width: 151px; height: 35px; border-radius: 2px; cursor: pointer;" (click)="formFunction()">PLACE ORDER</button>
+        <div class="place-btn"
+            *ngIf="!isFormContainerVisible">
+            <button class="btn btn1"
+                (click)="formFunction()">PLACE ORDER</button>
         </div>
     </div>
 </div>
 <div class="address-details" *ngIf="!isFormContainerVisible">
-    <h3 style="color: #9D9D9D; margin-bottom: 0%;">Address Details</h3>
+    <h3 style="color: #333232; margin-bottom: 0%;">Address Details</h3>
 </div>
 <div>
-    <div class="form-container" *ngIf="isFormContainerVisible">
-        <div style="display: flex; justify-content: space-between;">
+    <div class="form-container" *ngIf="isFormContainerVisible && !isLogin">
+        <div class="customer">
             <div>
                 <h2>Customer Details</h2>
             </div>
@@ -88,12 +105,72 @@
             </div>
         </div>
         <div class="buttons" *ngIf="!isOrderSummaryVisible">
-            <button class = "continue" (click)="orderFunction()">CONTINUE</button>
+            <button class="continue" (click)="orderFunction()">CONTINUE</button>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="form-container" *ngIf="isFormContainerVisible && isLogin">
+        <div class="customer">
+            <div>
+                <h2>Customer Details</h2>
+            </div>
+            <div class="buttons">
+                <button class="add-address">Add New Address</button>
+            </div>
+        </div>
+        <div class="content">
+
+            <div class="form-group">
+                <div>
+                    <label for="full-name" class="label">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" value="{{cartItems[0].user_id.fullName}}">
+                </div>
+                <div>
+                    <label for="mobile-number" class="label">Mobile Number</label>
+                    <input type="text" id="mobile-number" name="mobile-number" value="{{cartItems[0].user_id.phone}}">
+                </div>
+            </div>
+            <div>
+                <div class="type-options">
+                    <label style="font-size: 16px;"><input type="radio" name="type" value="home" checked>1. Work <span style="font-size: 13px; color: #A03037;" (click)="edit()">edit</span></label>
+                </div>
+            </div>
+            <div class="add-address">
+                <div>
+                    <label for="address">Address</label>
+                </div>
+                <div style="height: 76px;">
+                    <input type="text" id="address" name="address" value="{{cartItems[0].user_id.address[0].fullAddress}}" [disabled]="isEdit">
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label for="city">City/Town</label>
+                    <input type="text" id="city" name="city" value="{{cartItems[0].user_id.address[0].city}}" [disabled]="isEdit">
+                </div>
+                <div style="width: 50%;">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" value="{{cartItems[0].user_id.address[0].state}}" [disabled]="isEdit">
+                </div>
+            </div>
+            <div>
+                <label style="font-size: 18px;"><input type="radio" name="type" value="home">2. Home </label>
+                <div>
+                    <h4 style="font-size: 14px; margin-left: 23px;margin-bottom: 0px;font-weight: 500;">Address</h4>
+                    <p style="margin-left: 23px; font-weight: 400;">
+                        {{cartItems[0].user_id.address[1].fullAddress}}    
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons btn2" *ngIf="!isOrderSummaryVisible">
+            <button class="continue" (click)="orderFunction()">CONTINUE</button>
         </div>
     </div>
 </div>
 <div class="order-details" *ngIf="!isOrderSummaryVisible">
-    <h3 style="color: #9D9D9D; margin-bottom: 0%;">Order summery</h3>
+    <h3 style="color: #333232; margin-bottom: 0%;">Order summery</h3>
 </div>
 <div class="order-summary" *ngIf="isOrderSummaryVisible">
     <div class="mycart">
@@ -102,20 +179,22 @@
                 <h3 style="font-weight: 500; font-size: 18px;">Order summery</h3>
             </div>
         </div>
-        <div style="display: flex; margin-left: 2%; height: 47%;">
-            <div class="image">
-                <img src="../../../assets/Image 11.png" alt="" style="height: 100%;">
-            </div>
-            <div class="details">
-                <h4 style="font-weight: 500;">Don't Make Me Think</h4>
-                <p style="font-size: 14px; color: #9D9D9D;">by Steve Krug</p>
-                <p style="font-size: 14px; font-weight: 500;">Rs. 1500 <span
-                        style="color: #9D9D9D; font-size: 10px; margin-left: 2px;"><s>Rs.2000</s></span></p>
+        <div class="scroll">
+            <div style="display: flex; margin-left: 2%; height: 47%; margin-top: 2px; margin-bottom: 56px;" *ngFor="let book of cartItems">
+                <div class="image">
+                    <img src="../../../assets/Image 11.png" alt="" style="height: 100%;">
+                </div>
+                <div class="details">
+                    <h4 style="font-weight: 500;">{{book.product_id.bookName}}</h4>
+                    <p style="font-size: 14px; color: #9D9D9D;">by {{book.product_id.author}}</p>
+                    <p style="font-size: 14px; font-weight: 500;">Rs. {{book.product_id.discountPrice * book.quantityToBuy}} <span
+                            style="color: #9D9D9D; font-size: 10px; margin-left: 2px;"><s>Rs.2000</s></span></p>
+                </div>
             </div>
         </div>
         <div style="display: flex; justify-content: end; margin-right: 30px; margin-bottom: 2px;">
             <button class="btn"
-                style="background-color: #3371B5; color: white; width: 151px; height: 35px; border-radius: 2px; cursor: pointer;">CHECKOUT</button>
+                style="background-color: #3371B5; color: white; width: 151px; height: 35px; border-radius: 2px; cursor: pointer;" [routerLink]="['/order-placed']">CHECKOUT</button>
         </div>
     </div>
 </div>

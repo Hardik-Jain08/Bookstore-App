@@ -9,8 +9,6 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
-import { AccordianComponent } from './components/accordian/accordian.component';
 import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -51,8 +49,6 @@ import { ImgService } from './services/img-service/img.service';
     FooterComponent,
     CounterComponent,
     FeedbackComponent,
-    BreadcrumbComponent,
-    AccordianComponent,
     HomeComponent,
     PlsLoginComponent,
     ForgotPasswordComponent,

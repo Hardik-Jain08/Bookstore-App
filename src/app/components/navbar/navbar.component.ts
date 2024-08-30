@@ -9,28 +9,32 @@ import { CartService } from 'src/app/services/cart-service/cart.service';
 })
 export class NavbarComponent implements OnInit {
   cartCnt = 0;
+  hidden = true;
+  currentUrl = this.router.url;
   showsearchbar = this.router.url === "/home" || this.router.url === "/pleaselogin" || this.router.url === "/product-details" || this.router.url === "/cart" || this.router.url === "/order-placed" || this.router.url === "/profile" || this.router.url === "/myorders" || this.router.url === "/wishlist";
   isLoggedIn = false;
   showdialog = false;
   searchTerm: string = '';
   token = localStorage.getItem('accessToken');
+  showUser = this.router.url !== "/forgot-password";
   constructor(private router:Router, private cart: CartService){
 
   }
   ngOnInit() {
-
+    
     this.cart.getCartItems(this.token!).subscribe({
 
       next: (data: any) => {
         console.log('user', data.result[0].user_id._id);
         this.cartCnt = data.result.length;
         localStorage.setItem('userId', data.result[0].user_id._id);
+        if(this.cartCnt) this.hidden = false;
       },
       error: (error) => {
         console.log(error);
       },
     });
-
+    
     if (localStorage.getItem('accessToken')) {
       this.isLoggedIn = true;
       console.log(this.isLoggedIn);

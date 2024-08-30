@@ -11,6 +11,10 @@
     justify-content: space-around;
     z-index: 999;
   }
+  .left-align {
+    justify-content: start;
+    padding-left: 8%;
+  }
   
   .search-container {
     background-color: #FFFFFF;

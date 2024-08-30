@@ -5,15 +5,13 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { authGuard } from './auth/auth.guard';
 import { CartComponent } from './pages/cart/cart.component';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { OrderPlacedComponent } from './pages/order-placed/order-placed.component';
-import { CardComponent } from './components/card/card.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { PlsLoginComponent } from './pages/pls-login/pls-login.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -35,7 +33,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'product-detail',
+        path: 'product-details',
         component: ProductDetailsComponent,
         canActivate: [authGuard]
       },
@@ -76,6 +74,10 @@ const routes: Routes = [
     path: 'myorders',
     component: MyOrdersComponent,
     canActivate: [authGuard]
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
   }
 ];
 

@@ -1,33 +1,30 @@
-<div style="background-color: black; padding-bottom: 52px;">
-    <div class="hidden">ONLINE BOOK SHOPPING</div>
-    <div class="card">
-        <mat-card class="first">
-            <img class="image" src="../../../assets/2766594.png" alt="none">
-            <div class="title">ONLINE BOOK SHOPPING</div>
-        </mat-card>
+<div class="login-container">
+  <div class="hidden">ONLINE BOOK SHOPPING</div>
+  <div class="card" style="z-index: 999">
+    <mat-card class="first">
+      <img class="image" src="../../../assets/2766594.png" alt="none" />
+      <div class="title">ONLINE BOOK SHOPPING</div>
+    </mat-card>
 
-        <mat-card class="example-card second">
-            <div class="btns">
-                <div class="login">
-                    <button (click)="toggle1()">LOGIN</button>
-                    <div class="parent-line">
-                        <div *ngIf="check==true" class="line"></div>
-                    </div>
-                </div>
-                <div class="signup">
-                    <button (click)="toggle2()">SIGNUP</button>
-                    <div class="parent-line">
-                        <div *ngIf="check==false" class="line"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="login-sign">
-                <app-login *ngIf="check==true"></app-login>
-                <app-signup *ngIf="check==false"></app-signup>
-            </div>
-
-        </mat-card>
-    </div>
-
-
+    <mat-card class="example-card second">
+      <div class="btns">
+        <div class="login">
+          <button (click)="toggle('login')">LOGIN</button>
+          <div class="parent-line">
+            <div *ngIf="check === true" class="line"></div>
+          </div>
+        </div>
+        <div class="signup">
+          <button (click)="toggle('signup')">SIGNUP</button>
+          <div class="parent-line">
+            <div *ngIf="check === false" class="line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="login-sign">
+        <app-login *ngIf="check == true"></app-login>
+        <app-signup *ngIf="check == false"></app-signup>
+      </div>
+    </mat-card>
+  </div>
 </div>

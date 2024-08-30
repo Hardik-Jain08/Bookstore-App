@@ -54,6 +54,6 @@ export class CardComponent implements OnInit {
   handleClick() {
     this.product.bookImage = this.img;
     localStorage.setItem('product', JSON.stringify(this.product));
-    this.router.navigate(['/product-detail']);
+    this.router.navigate(['/product-details']);
   }
 }

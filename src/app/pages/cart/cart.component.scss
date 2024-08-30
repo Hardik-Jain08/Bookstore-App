@@ -59,8 +59,8 @@
     margin: 2% 2%;
 }
 .dropbtn {
-    width: 250px;
-    height: 40px;
+    width: 92%;
+    height: 45px;
     border: 1px solid #DCDCDC;
     border-radius: 1px;
     opacity: 1;
@@ -68,6 +68,7 @@
     margin-right: 25px;
     padding: 10px;
     display: flex;
+    overflow-y: auto;
     gap: 10px;
     background-color: #FFFFFF;
 }

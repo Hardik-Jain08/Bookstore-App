@@ -66,7 +66,7 @@
       <div class="feedback">
         <p class="overall_rating">Overall rating</p>
         <div class="stars">
-          <mat-icon *ngFor="let i of [1, 2, 3, 4, 5]" (click)="onStarClick(i)" [ngClass]="{'selected': stars[i]}">star_outline</mat-icon>
+          <mat-icon *ngFor="let i of [0, 1, 2, 3, 4]" (click)="onStarClick(i)" [ngClass]="{'selected': stars[i]}">star_outline</mat-icon>
         </div>
         <textarea placeholder="Write your review" [(ngModel)]="comment"></textarea>
         <button mat-raised-button (click)="addReview()">Submit</button>

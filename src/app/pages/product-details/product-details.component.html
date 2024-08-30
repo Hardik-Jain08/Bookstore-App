@@ -14,7 +14,7 @@
     </div>
     <div class="buttons">
       <button mat-raised-button  (click)="addToCart()" >ADD TO BAG</button> 
-      <button mat-raised-button [routerLink]="['/wishlist']">
+      <button (click)="addToWishlist()" mat-raised-button >
         <mat-icon>favorite</mat-icon>WISHLIST
       </button>
     </div>

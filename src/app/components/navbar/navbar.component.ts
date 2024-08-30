@@ -9,7 +9,7 @@ import { CartService } from 'src/app/services/cart-service/cart.service';
 })
 export class NavbarComponent implements OnInit {
   cartCnt = 0;
-  ishome = this.router.url === "/home";
+  showsearchbar = this.router.url === "/home" || this.router.url === "/pleaselogin" || this.router.url === "/product-details" || this.router.url === "/cart" || this.router.url === "/order-placed" || this.router.url === "/profile" || this.router.url === "/myorders" || this.router.url === "/wishlist";
   isLoggedIn = false;
   showdialog = false;
   searchTerm: string = '';
@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
       },
     });
 
-    if (localStorage.getItem('acessToken')) {
+    if (localStorage.getItem('accessToken')) {
       this.isLoggedIn = true;
       console.log(this.isLoggedIn);
     } else this.isLoggedIn = false;
@@ -54,7 +54,7 @@ openProfile = () => {
 };
 
 logout = () => {
-  localStorage.removeItem('acesstoken');
+  localStorage.removeItem('accessToken');
   window.location.reload();
 };
 }

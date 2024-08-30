@@ -11,17 +11,17 @@
     <img class="logo" src="../../../assets/logo.svg" alt="BookStore Logo" />
     <span style="font: normal 20px/26px Roboto; color: #ffffff">BookStore</span>
   </div>
-  <div class="search-container" *ngIf="ishome">
+  <div class="search-container" *ngIf="showsearchbar">
     <span class="material-symbols-outlined"> search </span>
     <input type="text" class="search-input" placeholder="Search..." />
   </div>
   <div class="user-cart">
-    <div class="profile" [routerLink]="['/profile']">
+    <div class="profiles" (click)="toggle()">
       <span class="material-symbols-outlined">person </span>
       <p>Profile</p>
     </div>
     <div class="cart" [routerLink]="['/cart']">
-      <div [matBadge]="cartCnt" style="width: 50%; display: flex; justify-content: center;">
+      <div [matBadge]="cartCnt" matBadgeSize="small" style="width: 50%; display: flex; justify-content: center;">
         <img src="../../../assets/supermarket.svg" alt="cartIcon" />
       </div>
       <p>Cart</p>
@@ -32,15 +32,15 @@
   <div style=" width: 81px; height: 10px; border-radius: 3px; background: #FFFFFF 0% 0% no-repeat padding-box; top: 56px;left: 80%;"></div>
   <div *ngIf="isLoggedIn" class="dialog-authenticated">
       <p>Hello Poonam,</p>
-      <div class="profile" (click)="openProfile()">
+      <div class="profile" (click)="openProfile()" [routerLink]="['/myorders']">
           <mat-icon>person_outline</mat-icon>
           <p>Profile</p>
       </div>
-      <div class="my_orders" (click)="openorders()" >
+      <div class="my_orders" (click)="openorders()" [routerLink]="['/myorders']">
           <mat-icon>markunread_mailbox_outline</mat-icon>
           <p>My Orders</p>
       </div>
-      <div class="wishlist" (click)="openwishlist()">
+      <div class="wishlist" (click)="openwishlist()" [routerLink]="['/wishlist']">
           <mat-icon>favorite_outline</mat-icon>
           <p>My Wishlist</p>
       </div>

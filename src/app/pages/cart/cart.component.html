@@ -32,8 +32,7 @@
                         <div class="edit-quantity">
                             <button class="btn" (click)="decValue(ind)" [disabled]="book.quantityToBuy === 1">–</button>
                             <input type="number" class="item" [(ngModel)]="book.quantityToBuy">
-                            <button class="btn" (click)="incValue(ind)"><img src="../../../assets/plus.svg"
-                                    alt=""></button>
+                            <button class="btn" (click)="incValue(ind)">+</button>
                         </div>
                         <div class="remove">
                             <div style="margin-left: 24px; font-size: 13px; font-weight: 500; cursor: pointer;" (click)="removeItem(ind)">Remove

@@ -13,6 +13,7 @@ import { OrderPlacedComponent } from './pages/order-placed/order-placed.componen
 import { CardComponent } from './components/card/card.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { PlsLoginComponent } from './pages/pls-login/pls-login.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 
 const routes: Routes = [
   {
@@ -68,7 +69,13 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'myorders',
+    component: MyOrdersComponent,
+    canActivate: [authGuard]
   }
 ];
 

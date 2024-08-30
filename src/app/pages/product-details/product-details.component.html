@@ -13,7 +13,7 @@
       <img width="281px" height="367px" src="{{ book.bookImage.path }}" alt="" />
     </div>
     <div class="buttons">
-      <button mat-raised-button [routerLink]="['/cart']">ADD TO BAG</button>
+      <button mat-raised-button  (click)="addToCart()" >ADD TO BAG</button> 
       <button mat-raised-button [routerLink]="['/wishlist']">
         <mat-icon>favorite</mat-icon>WISHLIST
       </button>

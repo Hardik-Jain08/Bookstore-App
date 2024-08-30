@@ -9,7 +9,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  postApiCall(endpoint:string, data: any, options?:any){
+  postApiCall(endpoint:string, data?: any, options?:any){
     return this.http.post(environment.BASE_URL + endpoint, data, options);
   }
 

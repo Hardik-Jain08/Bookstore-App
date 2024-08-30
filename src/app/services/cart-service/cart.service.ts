@@ -15,8 +15,16 @@ export class CartService {
       'Content-Type':'application/json',
       'x-access-token': token
     })
-    return this.httpService.postApiCall(`add_cart_item/${product_id}`, {headers});
+    return this.httpService.postApiCall(`add_cart_item/${product_id}`, {}, {headers});
   }
+ 
+  // addToCart(url: string) {
+  //   const token = localStorage.getItem('accessToken');
+  //   const myHeaders = new Headers();
+  //   myHeaders.append('x-access-token', `${token}`);
+  //   return this.http.addItemToCart(url, true, { headers: myHeaders });
+  // }
+
 
   updateCartItemQuantity(cartItemId: string, data: any, token:string) {
     const headers = new HttpHeaders({

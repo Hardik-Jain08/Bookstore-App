@@ -78,11 +78,13 @@ export class ProductDetailsComponent implements OnInit {
   addToCart() {
     this.cartService.addCartItem(this.bookId, this.token!).subscribe({
       next: (res: any) => {
-        console.log(res);
+        console.log("Book Id: " + this.bookId);
+         this.router.navigate(['/cart']);
+        //console.log(res);
         if (res.message === 'Product item is already added, increase the item count') {
-          console.log('Product item is already added, increase the item count');
+         console.log('Product item is already added, increase the item count');
         } else {
-          this.router.navigate(['/myorder']);
+          this.router.navigate(['/myorders']);
         }
       },
       error: (err: any) => console.log(err),

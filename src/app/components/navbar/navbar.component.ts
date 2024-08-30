@@ -45,7 +45,7 @@ export class NavbarComponent implements OnInit {
     this.showdialog = false;
   }
   openorders() {
-    this.router.navigate(['/myorder']);
+    this.router.navigate(['/myorders']);
     this.showdialog = false;
   }
 

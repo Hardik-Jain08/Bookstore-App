@@ -32,15 +32,15 @@
   <div style=" width: 81px; height: 10px; border-radius: 3px; background: #FFFFFF 0% 0% no-repeat padding-box; top: 56px;left: 80%;"></div>
   <div *ngIf="isLoggedIn" class="dialog-authenticated">
       <p>Hello Poonam,</p>
-      <div class="profile" (click)="openProfile()" [routerLink]="['/myorders']">
+      <div class="profile" (click)="openProfile()">
           <mat-icon>person_outline</mat-icon>
           <p>Profile</p>
       </div>
-      <div class="my_orders" (click)="openorders()" [routerLink]="['/myorders']">
+      <div class="my_orders" (click)="openorders()">
           <mat-icon>markunread_mailbox_outline</mat-icon>
           <p>My Orders</p>
       </div>
-      <div class="wishlist" (click)="openwishlist()" [routerLink]="['/wishlist']">
+      <div class="wishlist" (click)="openwishlist()">
           <mat-icon>favorite_outline</mat-icon>
           <p>My Wishlist</p>
       </div>

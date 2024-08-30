@@ -65,6 +65,7 @@ export class ProductDetailsComponent implements OnInit {
     this.wishlistService.addWishList(this.bookId, this.token).subscribe({
       next: (res: any) => {
         console.log(res);
+        this.router.navigate(['/wishlist']);
         if (res.message === 'Product item is already in wish list') {
           console.log('Product is already in list');
         } else {
@@ -93,7 +94,7 @@ export class ProductDetailsComponent implements OnInit {
         if (res.message === 'Product item is already added, increase the item count') {
          console.log('Product item is already added, increase the item count');
         } else {
-          this.router.navigate(['/myorders']);
+          // this.router.navigate(['/myorders']);
         }
       },
       error: (err: any) => console.log(err),

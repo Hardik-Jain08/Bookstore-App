@@ -28,6 +28,7 @@ export class ProductDetailsComponent implements OnInit {
     this.feedbackService.getFeedback(this.bookId, this.token!).subscribe({
       next: (res: any) => {
         this.feedbacks = res.result;
+        this.feedbacks.reverse();
         console.log(this.feedbacks);
       },
       error: (err) => console.log(err),

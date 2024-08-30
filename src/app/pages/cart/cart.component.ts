@@ -20,7 +20,7 @@ export class CartComponent {
   constructor(private cart: CartService, private router: Router) {}
 
   ngOnInit() {
-    if (localStorage.getItem('acesstoken')) {
+    if (localStorage.getItem('accessToken')) {
       this.isLogin = true;
     } else {
       this.isLogin = false;
@@ -40,8 +40,10 @@ export class CartComponent {
   }
 
   formFunction() {
-    if (localStorage.getItem('acessToken')) {
+    if (localStorage.getItem('accessToken')) {
       this.isFormContainerVisible = !this.isFormContainerVisible;
+      
+
     } else {
       this.router.navigate(['/login']);
     }

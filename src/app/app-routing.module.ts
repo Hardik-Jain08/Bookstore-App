@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'pleaselogin',
     component: PlsLoginComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 

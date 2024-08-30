@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
       },
     });
 
-    if (localStorage.getItem('acessToken')) {
+    if (localStorage.getItem('accessToken')) {
       this.isLoggedIn = true;
       console.log(this.isLoggedIn);
     } else this.isLoggedIn = false;
@@ -54,7 +54,7 @@ openProfile = () => {
 };
 
 logout = () => {
-  localStorage.removeItem('acesstoken');
+  localStorage.removeItem('accessToken');
   window.location.reload();
 };
 }
